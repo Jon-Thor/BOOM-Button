@@ -91,17 +91,21 @@ const checkboom = () => {
   }
 }
 
-input1.addEventListener("input", (e) => {
+input1.addEventListener("keypress", (e) => {
   handleClickToGetInputValue(e)
 })
 
-input2.addEventListener("input", (e) => {
+input2.addEventListener("keypress", (e) => {
   limiter(e)
 })
 
 const limiter = (e) => {
+  
+  if(e.target.value.length === 0){
+  }else{
   limit = parseInt(e.target.value);
-  localStorage.setItem("Limiter", limit)
+  localStorage.setItem("Limiter", limit)}
+
 };
 
 if(localStorage.getItem("Limiter") != undefined)
@@ -111,8 +115,12 @@ if(localStorage.getItem("Limiter") != undefined)
 
 
 const handleClickToGetInputValue = (e) => {
+
+  if(e.target.value.length === 0){
+  }else{
   numberChange = parseInt(e.target.value);
-  localStorage.setItem("Numberchanger", numberChange)
+  localStorage.setItem("Numberchanger", numberChange)}
+
 };
 
 
