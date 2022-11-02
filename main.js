@@ -1,58 +1,7 @@
 
 
-const harry = {
-  firstName: "Harry",
-  lastName: "Potter",
-  hairColor: "black",
-};
 
 
-
-// Input example
-
-// buttonElement.onclick = () => {
-//   // Input element value accessible within
-//   // an onClick listener function
-//   console.log(inputElement.value);
-// };
-
-// const handleClickToGetInputValue = () => {
-//   console.log(inputElement.value);
-// };
-
-// buttonElement.onclick = handleClickToGetInputValue;
-
-
-
-/*
-if(counter>limit ){ // OR LESS THAN
-  // display boom message
-}
-
-*/
-
-// localStorage.setItem("foo", "bar");
-
-// const ten = 10;
-// console.log(typeof ten);
-// // JSON.stringify(ten) => "ten"
-// localStorage.setItem("ten", ten);
-// const newTen = localStorage.getItem("ten");
-// console.log(typeof newTen);
-// console.log(typeof JSON.parse(newTen));
-
-// localStorage.setItem("foo", "bar");
-
-// 
-
-// buttonElement.onclick = handleClickToGetInputValue;
-
-//localStorage.setItem("harry", JSON.stringify(harry));
-//const newHarry = localStorage.getItem("harry");
-//console.log(newHarry);
-//console.log(typeof newHarry);
-//console.log(JSON.parse(newHarry));
-//console.log(typeof JSON.parse(newHarry));
 
 let counter = 0;
 
@@ -92,37 +41,23 @@ const checkboom = () => {
 }
 
 input1.addEventListener("keypress", (e) => {
-  handleClickToGetInputValue(e)
+  if(e.target.value.length === 0){
+  }else{
+  numberChange = parseInt(e.target.value);
+  localStorage.setItem("Numberchanger", numberChange)}
 })
 
 input2.addEventListener("keypress", (e) => {
-  limiter(e)
-})
-
-const limiter = (e) => {
-  
   if(e.target.value.length === 0){
   }else{
   limit = parseInt(e.target.value);
   localStorage.setItem("Limiter", limit)}
 
-};
+})
 
 if(localStorage.getItem("Limiter") != undefined)
 {limit = parseInt(localStorage.getItem("Limiter"))
 }
-
-
-
-const handleClickToGetInputValue = (e) => {
-
-  if(e.target.value.length === 0){
-  }else{
-  numberChange = parseInt(e.target.value);
-  localStorage.setItem("Numberchanger", numberChange)}
-
-};
-
 
 if(localStorage.getItem("Numberchanger") != undefined)
 {numberChange = parseInt(localStorage.getItem("Numberchanger"))
